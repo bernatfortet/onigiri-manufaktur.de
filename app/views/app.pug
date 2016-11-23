@@ -1,0 +1,25 @@
+include templates
+.banner
+
+.contents
+  header
+    h1 Onigiri Manufaktur
+    h2 Vegand and Delicious
+
+  section.onigiris
+    +onigiri('carrot', 'carrot.jpg')
+    +onigiri('plumb', 'plumb.jpg')
+
+  section.info
+    h3 Donnerstag bis Sonntag
+    h3 10:00 - 19:00
+    h3
+      .geo.icon
+      .address maybachufer 8
+
+
+  footer
+    .social
+      .icon.instagram
+      .icon.facebook
+      .handle @onigirimanufaktur

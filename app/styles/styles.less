@@ -1,0 +1,45 @@
+@import "global-styles.less";
+@import "fonts.less";
+
+html, body, #App{ width:100%; }
+#App{ .flxRow; .flx1; }
+
+// Styles
+@pink: #FF2D9C;
+.t1{ .fs(32px,32px); font-weight:600;  }
+.t2{ .fs(32px); font-weight:600; }
+
+
+// Structure ------------
+
+.banner{ width:560px; background:@pink; }
+
+
+.contents{ padding:24px 32px 24px 120px; }
+
+	header{
+		h1{ }
+		h2{ .fs(44px);  color: @pink; font-weight:600;  }
+	}
+
+	.onigiris{ margin-top:24px; .flxRow; .flxWrap; }
+		.onigiri{ .flxCol; .aic;
+			image{}
+			.name{ .t2; }
+		}
+
+
+	.info{ margin-top:24px;
+		h3{ margin:0; .t1; }
+	}
+
+	footer{ margin-top:24px; .t1; }
+
+
+
+
+// Media queries
+@media only screen
+and (min-width : 800px) {
+
+}
