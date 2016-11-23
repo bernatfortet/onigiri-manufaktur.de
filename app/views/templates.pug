@@ -2,4 +2,5 @@
 mixin onigiri(name, url)
 	.onigiri
 		image.img(src=root+'/'+url)
-		.name= name
+		.name
+			span= name

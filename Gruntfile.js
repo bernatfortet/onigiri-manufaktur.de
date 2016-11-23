@@ -53,6 +53,7 @@ module.exports = function (grunt) {
       dist: ['.tmp', '<%= basement.dist %>/*'],
       server: '.tmp'
     },
+
     coffee: {
       server: {
         files: [{
@@ -107,6 +108,7 @@ module.exports = function (grunt) {
         }
       }
     },
+
     less: {
       options: {
         paths: ['app/components'],
@@ -153,6 +155,39 @@ module.exports = function (grunt) {
         }]
       }
     },
+
+    imagemin: {                          // Task
+      dynamic: {                         // Another target
+        files: [{
+          expand: true,                  // Enable dynamic expansion
+          cwd: 'dist/',                   // Src matches are relative to this path
+          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+          dest: 'dist/'                  // Destination path prefix
+        }]
+      }
+    },
+
+    jekyll: {                             // Task
+      options: {                          // Universal options
+        bundleExec: true,
+        src : '<%= app %>'
+      },
+      dist: {                             // Target
+        options: {                        // Target options
+          dest: '<%= dist %>',
+          config: '_config.yml,_config.build.yml'
+        }
+      },
+      serve: {                            // Another target
+        options: {
+          serve: true,
+          dest: '.jekyll',
+          drafts: true,
+          future: true
+        }
+      }
+    },
+
     'gh-pages': {
       options: {
         base: 'dist'
@@ -186,7 +221,12 @@ module.exports = function (grunt) {
 
   grunt.registerTask('deploy', [
     'build',
-    'gh-pages'
+    'gh-pages',
+    'server',
+  ]);
+
+  grunt.registerTask('jekyll', [
+    'jekyll',
   ]);
 
   grunt.registerTask('default', [ 'server']);
