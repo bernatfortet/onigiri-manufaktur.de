@@ -792,7 +792,7 @@ header h2 {
   display: flex;
   margin: 15px;
   position: relative;
-  cursor: pointer;
+  cursor: default;
 }
 .onigiris .onigiri .name {
   width: 150px;
