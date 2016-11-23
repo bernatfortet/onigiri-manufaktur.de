@@ -202,6 +202,12 @@ input::-moz-focus-inner {
 .fr {
   float: right;
 }
+.contain {
+  background-size: contain;
+}
+.cover {
+  background-size: cover;
+}
 .anchor {
   cursor: pointer;
 }
@@ -228,6 +234,9 @@ input::-moz-focus-inner {
 .shown {
   display: block;
   visibility: visible;
+}
+a {
+  text-decoration: none;
 }
 .bold {
   font-weight: bold;
@@ -535,7 +544,7 @@ input::-moz-focus-inner {
   color: yellow;
 }
 .black {
-  color: #131313;
+  color: #000;
 }
 .black90 {
   color: #2A2A2A;
@@ -606,9 +615,6 @@ input::-moz-focus-inner {
 .anchor {
   cursor: pointer;
 }
-.cover {
-  background-size: cover;
-}
 .cover-all {
   width: 100%;
   height: 100%;
@@ -639,6 +645,20 @@ input::-moz-focus-inner {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Circular";
+  src: url("fonts/lineto-circular-pro-book.eot");
+  src: url("fonts/lineto-circular-pro-book.eot?#iefix") format("embedded-opentype"), url("fonts/lineto-circular-pro-book.woff") format("woff"), url("fonts/lineto-circular-pro-book.ttf") format("truetype"), url("fonts/lineto-`circular-pro-book.svg#lineto-circular-pro-book") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular";
+  src: url("fonts/lineto-circular-pro-bold.eot");
+  src: url("fonts/lineto-circular-pro-bold.eot?#iefix") format("embedded-opentype"), url("fonts/lineto-circular-pro-bold.woff") format("woff"), url("fonts/lineto-circular-pro-bold.ttf") format("truetype"), url("fonts/lineto-circular-pro-bold.svg#lineto-circular-pro-bold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
 html,
 body {
   height: 100%;
@@ -659,24 +679,73 @@ body {
 .pgs {
   font-family: 'Public Gothic Square';
 }
-.t1 {
-  font-size: 32px;
-  line-height: 32px;
-  letter-spacing: 0;
-  font-weight: 600;
+.circular {
+  font-family: 'Circular';
 }
 .t2 {
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1;
   letter-spacing: 0;
   font-weight: 600;
+  font-family: 'Circular';
+}
+.bkg {
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .banner {
-  width: 560px;
-  background: #FF2D9C;
+  width: 40%;
+  max-width: 560px;
+  height: 100%;
+  position: relative;
+}
+.banner .inner {
+  width: inherit;
+  height: 100%;
+  position: fixed;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  background: url('/images/stripes.jpg') no-repeat center center;
+  background-size: cover;
+}
+.banner .onigiri {
+  width: 260px;
+  height: 260px;
+  background-image: url('/images/onigiri.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.spacer {
+  width: 10%;
+  max-width: 50px;
 }
 .contents {
-  padding: 24px 32px 40px 80px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  padding: 24px 32px 40px 24px;
 }
 header h1 {
   margin: 0;
@@ -708,7 +777,9 @@ header h2 {
   display: -ms-flex;
   display: flex;
 }
-.onigiri {
+.onigiris .onigiri {
+  width: 150px;
+  height: 150px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -720,27 +791,183 @@ header h2 {
   display: -ms-flex;
   display: flex;
   margin: 15px;
+  position: relative;
+  cursor: pointer;
 }
-.onigiri .name {
-  font-size: 32px;
+.onigiris .onigiri .name {
+  width: 150px;
+  height: 150px;
+  font-size: 24px;
   line-height: 1;
   letter-spacing: 0;
   font-weight: 600;
+  font-family: 'Circular';
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+}
+.onigiris .onigiri:hover .img {
+  -webkit-opacity: 0.4;
+  -moz-opacity: 0.4;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(40));
+  filter: alpha(opacity = (40));
+  opacity: 0.4;
+}
+.onigiris .onigiri:hover .name {
+  visibility: visible;
 }
 .info {
-  margin-top: 24px;
+  margin-top: 36px;
 }
 .info h3 {
-  margin: 0;
-  font-size: 32px;
-  line-height: 32px;
+  margin: 12px 0;
+  font-size: 24px;
+  line-height: 1;
   letter-spacing: 0;
   font-weight: 600;
+  font-family: 'Circular';
+}
+.info .calendar {
+  margin-right: 12px;
+  background-image: url('/images/calendar.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.info .time {
+  margin-right: 12px;
+  background-image: url('/images/time.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.info .location {
+  margin-right: 12px;
+  background-image: url('/images/location.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.info a {
+  color: #000;
+  display: block;
+}
+.info a:hover {
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(50));
+  filter: alpha(opacity = (50));
+  opacity: 0.5;
 }
 footer {
-  margin-top: 24px;
-  font-size: 32px;
-  line-height: 32px;
+  margin-top: 36px;
+  font-size: 24px;
+  line-height: 1;
   letter-spacing: 0;
   font-weight: 600;
+  font-family: 'Circular';
+}
+.social {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+.social .instagram {
+  margin-right: 12px;
+  background-image: url('/images/instagram.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.social .facebook {
+  margin-right: 12px;
+  background-image: url('/images/facebook.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+a.icon:hover {
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(50));
+  filter: alpha(opacity = (50));
+  opacity: 0.5;
+}
+@media only screen and (max-width: 900px) {
+  #App {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+  }
+  .banner {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+  }
+  .banner .inner {
+    position: relative;
+  }
+  .spacer {
+    display: none;
+    visibility: hidden;
+  }
+  .onigiris {
+    -webkit-justify-content: space-around;
+    -ms-justify-content: space-around;
+    justify-content: space-around;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+  }
+  .onigiris .onigiri {
+    margin-bottom: 28px;
+  }
+  .onigiris .onigiri .name {
+    position: relative;
+    visibility: visible;
+    margin-top: 12px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .banner {
+    height: 280px;
+  }
+  .banner .onigiri {
+    height: 150px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 63px;
+    line-height: 1;
+    letter-spacing: 0;
+    font-family: 'Public Gothic Square';
+    color: black;
+    text-transform: uppercase;
+  }
+  header h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: 0;
+    color: #FF2D9C;
+    font-weight: 600;
+  }
 }
