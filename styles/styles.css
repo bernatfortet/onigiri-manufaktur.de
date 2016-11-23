@@ -633,9 +633,15 @@ input::-moz-focus-inner {
   -o-user-select: text;
   user-select: text;
 }
+@font-face {
+  font-family: 'Public Gothic Square';
+  src: url('fonts/public_gothic_square-webfont.woff2') format('woff2'), url('fonts/public_gothic_square-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 html,
-body,
-#App {
+body {
+  height: 100%;
   width: 100%;
 }
 #App {
@@ -649,6 +655,9 @@ body,
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
+}
+.pgs {
+  font-family: 'Public Gothic Square';
 }
 .t1 {
   font-size: 32px;
@@ -667,9 +676,19 @@ body,
   background: #FF2D9C;
 }
 .contents {
-  padding: 24px 32px 24px 120px;
+  padding: 24px 32px 40px 80px;
+}
+header h1 {
+  margin: 0;
+  font-size: 90px;
+  line-height: 1;
+  letter-spacing: 0;
+  font-family: 'Public Gothic Square';
+  color: black;
+  text-transform: uppercase;
 }
 header h2 {
+  margin: 0;
   font-size: 44px;
   line-height: 1;
   letter-spacing: 0;
@@ -677,7 +696,7 @@ header h2 {
   font-weight: 600;
 }
 .onigiris {
-  margin-top: 24px;
+  margin: 24px -15px 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -700,6 +719,7 @@ header h2 {
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
+  margin: 15px;
 }
 .onigiri .name {
   font-size: 32px;
