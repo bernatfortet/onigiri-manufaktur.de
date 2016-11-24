@@ -14,11 +14,17 @@ html, body { height:100%; width:100%; }
 .bkg{ background-repeat:no-repeat; background-position:center center;}
 .icon{ @size:24px; width:@size; height:@size; .bkg; }
 
+	a{ color:@black; .block;
+		&:hover{ .op(.5); }
+	}
+
+
 // Structure ------------
 
 .banner{ width:40%; max-width:560px; height:100%; .rel;
-	.inner{ width:inherit; height:100%; .fixed; .flx; .jcc; .aic; background:url('/images/stripes.jpg') no-repeat center center; background-size:cover; }
+	.inner{ width:inherit; height:100%; .fixed; .flxCol; .flx; .jcc; .aic; background:url('/images/stripes.jpg') no-repeat center center; background-size:cover; }
 	.onigiri{ width:260px; height:260px; background-image:url('/images/onigiri.png'); .bkg; background-size:contain; }
+	.title{ .circular; .fs(90px, 70px); .pgs; color:black; .upcase; .tac;   }
 }
 
 .spacer{ width:10%; max-width:50px; }
@@ -30,14 +36,14 @@ html, body { height:100%; width:100%; }
 		h2{ margin:0; .fs(44px);  color: @pink; font-weight:600; }
 	}
 
-	.onigiris{ margin:24px -15px 0; .flxRow; .flxWrap;
+	.onigiris{ max-width:570px; margin:24px -15px 0; .flxRow; .flxWrap;
 
-		.onigiri{ @size:150px; width:@size; height:@size; .flxCol; .aic; .jcc; margin:15px; .rel; cursor:default;
-			image{}
-			.name{ width:100px; height:100px; .t2; .flx; .jcc; .aic; .abs; visibility:hidden; .tac; }
+		.onigiri{ @size:150px; width:@size; .flxCol; .aic; .jcfs; margin:15px; .rel; cursor:default;
+			.img{ width:@size; height:@size; }
+				.open{ .abs; left:0; top:0; visibility:hidden; }
+			.name{ .flx; .jcc; .aic; .t2; .tac; }
 			&:hover{
-				.img{ .op(0.4); }
-				.name{ visibility: visible; }
+				.open{ visibility: visible; }
 
 			}
 		}
@@ -45,25 +51,24 @@ html, body { height:100%; width:100%; }
 
 
 	.info{ margin-top:36px;
-
+		.col{ width:80px; }
 		h3{ margin:12px 0; .t2; }
+
 		.calendar{ margin-right:12px; background-image:url('/images/calendar.png'); .bkg; .contain; }
 		.time{ margin-right:12px; background-image:url('/images/time.png'); .bkg; .contain; }
 		.location{ margin-right:12px; background-image:url('/images/location.png'); .bkg; .contain; }
-		a{ color:@black; .block; }
-		a:hover{ .op(.5); }
+
+
 	}
 
 
 	footer{ margin-top:36px; .t2; }
 		.social{ .flxRow;
-			.instagram{ margin-right:12px; background-image:url('/images/instagram.png'); .bkg; .contain; }
-			.facebook{ margin-right:12px; background-image:url('/images/facebook.png'); .bkg; .contain; }
+
+			.instagram{ margin-right:24px; background-image:url('/images/instagram.png'); .bkg; .contain; }
+			.facebook{ margin-right:24px; background-image:url('/images/facebook.png'); .bkg; .contain; }
+			.mail{ margin-right:4px; background-image:url('/images/mail.png'); .bkg; .contain; }
 		}
-
-
-		a.icon:hover{ .op(.5); }
-
 
 
 // Media queries
@@ -74,11 +79,7 @@ and (max-width : 900px) {
 		.inner{ .rel; }
 	}
 	.spacer{ .hide; }
-	.onigiris{ .jcsa;
-		.onigiri{ margin-bottom:28px;
-			.name{ .rel; visibility: visible; margin-top:12px; }
-		}
-	}
+	.onigiris{ .jcsa; }
 
 }
 @media only screen

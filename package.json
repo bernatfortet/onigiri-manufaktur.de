@@ -16,7 +16,6 @@
     "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-gh-pages": "^1.1.0",
-    "grunt-jekyll": "^0.4.4",
     "matchdep": "^1.0.0"
   },
   "engines": {

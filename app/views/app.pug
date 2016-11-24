@@ -2,34 +2,39 @@ include templates
 .banner
 	.inner
 		.onigiri
+		.title Onigiri Manufaktur
 .spacer
 
 .contents
 	header
-		h1 Onigiri Manufaktur
+		//- h1 Onigiri Manufaktur
 		h2 Vegan and Delicious!
 
 	section.onigiris
-		+onigiri('Edamame Avocado', 'carrot.jpg')
-		+onigiri('Hoi Sin Tofu', 'plumb.jpg')
-		+onigiri('Spicy Peanut Carrot', 'plumb.jpg')
-		+onigiri('Avocado Koriander', 'plumb.jpg')
-		+onigiri('Kimchi', 'plumb.jpg')
+		+onigiri('Edamame Avocado', 'carrot')
+		+onigiri('Hoi Sin Tofu', 'carrot')
+		+onigiri('Spicy Peanut Carrot', 'carrot')
+		+onigiri('Avocado Koriander', 'carrot')
+		+onigiri('Kimchi', 'carrot')
 
 	section.info
 		h3.flxRow
+			.icon.calendar
+			span.col Do-Fr
+			span.col Sa-So
+		h3.flxRow
 			.icon.time
-			span Donnerstag bis Sonntag — 10:00 - 19:00
+			span.col ab 19
+			span.col ab 12
 		a(href='https://www.google.com/maps/place/Karl-Marx-Platz+17,+12043+Berlin,+Germany/@52.474108,13.4403894,17z/data=!3m1!4b1!4m5!3m4!1s0x47a84fa031a4c605:0xd6d96c7a66fcba54!8m2!3d52.474108!4d13.4425781')
 			h3.flxRow
 				.icon.location
 				.address Karl-Marx-Platz 17, Neukölln, Berlin
 
-
 	footer
 		.social
 			a.icon.instagram(href='https://www.instagram.com/onigirimanufaktur/' title='Onigiri Manufaktur on Instagram' target='_blank')
 			a.icon.facebook(href='https://www.facebook.com/onigirimanufaktur/' title='Onigiri Manufaktur on Facebook' target='_blank')
-			a.flxRow
-				.icon.mail(href='mailto:kontak@onigirimanufaktur' title='Email us' target='_blank')
+			a.flxRow(href='mailto:kontak@onigirimanufaktur' title='Email us' target='_blank')
+				.icon.mail
 				span kontak@onigirimanufaktur
