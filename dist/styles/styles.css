@@ -753,16 +753,6 @@ a:hover {
   background-position: center center;
   background-size: contain;
 }
-.banner .title {
-  font-family: 'Circular';
-  font-size: 90px;
-  line-height: 70px;
-  letter-spacing: 0;
-  font-family: 'Public Gothic Square';
-  color: black;
-  text-transform: uppercase;
-  text-align: center;
-}
 .spacer {
   width: 10%;
   max-width: 50px;
@@ -857,6 +847,7 @@ header h2 {
   font-weight: 600;
   font-family: 'Circular';
   text-align: center;
+  margin-top: 12px;
 }
 .onigiris .onigiri:hover .open {
   visibility: visible;
@@ -908,12 +899,17 @@ footer {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
 }
 .social .instagram {
+  width: 40px;
+  height: 40px;
   margin-right: 24px;
   background-image: url('/images/instagram.png');
   background-repeat: no-repeat;
@@ -921,6 +917,8 @@ footer {
   background-size: contain;
 }
 .social .facebook {
+  width: 40px;
+  height: 40px;
   margin-right: 24px;
   background-image: url('/images/facebook.png');
   background-repeat: no-repeat;

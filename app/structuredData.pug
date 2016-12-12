@@ -1,0 +1,68 @@
+script(type="application/ld+json").
+	{
+	  	"@context":"http://schema.org",
+	  	"@type":"Restaurant", // Change to the most specific type (List of choices: https://goo.gl/tvMVHf)
+	    "name":"Onigiri Manufaktur", // *REQUIRED
+	//	    "legalName":"Onigiri Manufaktur", // The Registered Business Name
+	//	    "vatID":"776796257",
+	    "description":"Vegan Onigiris",
+	    "logo":"http://www.onigiri-manufaktur.de/images/onigiri.png",
+	    "image":"http://www.onigiri-manufaktur.de/images/onigiri.png",
+	    "address":{ // *REQUIRED
+	      "@type":"PostalAddress",
+	      "streetAddress":"Karl-Marx-Platz 17", // *REQUIRED
+	      "addressLocality":"Berlin", // *REQUIRED
+	      "addressRegion":"Berlin", // *REQUIRED
+	      "postalCode":"12043", // *REQUIRED
+	      "addressCountry":"DE" // *REQUIRED
+	    },
+	    //Optional Link to your business on Google Maps
+	    "hasMap": "https://www.google.com/maps/place/Karl-Marx-Platz+17,+12043+Berlin,+Germany/@52.474108,13.4403894,17z/data=!3m1!4b1!4m5!3m4!1s0x47a84fa031a4c605:0xd6d96c7a66fcba54!8m2!3d52.474108!4d13.4425781",
+	    "geo":{ // recommended.
+	      "@type":"GeoCoordinates",
+	      "latitude":52.372613,
+	      "longitude":-1.274392
+	    },
+	    "priceRange":"$",
+	    "servesCuisine":"Vegan",
+	    "servesCuisine":"Japenese",
+	    "url":"http://www.onigiri-manufaktur.de", // recommended.
+	    "menu":"http://www.onigiri-manufaktur.de", // recommended.
+	    //"telephone":"+441788568752", // Recommended - The number must include the Country Code.
+	    "email":"mailto:sales@customheat.co.uk", // Optional sales email address
+	    "openingHoursSpecification":[  // recommended.
+	      {
+	        "@type":"OpeningHoursSpecification", //Standard Opening Hours
+	        "dayOfWeek":[
+	          "Thursday",
+	          "Friday"
+	        ],
+	        "opens":"19:00",
+	        "closes":"24:00"
+	      },
+	      {
+	        "@type":"OpeningHoursSpecification", //Standard Opening Hours
+	        "dayOfWeek":[
+	          "Saturday",
+	          "Sunday"
+	        ],
+	        "opens":"12:00",
+	        "closes":"24:00"
+	      },
+	      {
+	        "@type":"OpeningHoursSpecification", //Closed all day Sunday
+	        "dayOfWeek":[
+	          "Monday",
+	          "Tuesday",
+	            "Wednesday"
+	        ],
+	        "opens":"00:00",
+	        "closes":"00:00"
+	      }
+	    ],
+	  	"sameAs":[ // All Social Accounts
+	      "http://www.facebook.com/onigirimanufaktur",
+	      "http://www.instagram.com/onigirimanufaktur"
+	    ],
+	    "acceptsReservations": "False"
+	}
